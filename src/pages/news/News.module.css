@@ -1,0 +1,16 @@
+.news {
+  padding-top: 90px;
+}
+
+.news_card {
+  width: 100%;
+}
+
+.news_list {
+  width: 100%;
+  background-color: grey;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
