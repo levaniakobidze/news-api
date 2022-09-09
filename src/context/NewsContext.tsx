@@ -19,6 +19,7 @@ export interface NewsTypes {
   activeNewsLink: string;
   changeActiveNewsLink: (e: React.MouseEvent<HTMLElement>) => void;
   data: INews["data"];
+  isLoading: boolean;
 }
 
 type IProps = {
@@ -60,14 +61,16 @@ export const NewsContextProvider = (props: IProps) => {
         break;
     }
   };
-  const [apiData] = useFetch(`https://inshorts.deta.dev/news?category=${url}`);
-
+  const [apiData, isLoading] = useFetch(
+    `https://inshorts.deta.dev/news?category=${url}`
+  );
   return (
     <NewsContext.Provider
       value={{
         activeNewsLink,
         changeActiveNewsLink,
         data: apiData.data,
+        isLoading,
       }}>
       {props.children}
     </NewsContext.Provider>

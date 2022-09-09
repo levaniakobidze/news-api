@@ -8,7 +8,6 @@
 
 .news_list {
   width: 100%;
-  background-color: grey;
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
