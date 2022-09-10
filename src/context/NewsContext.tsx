@@ -30,7 +30,6 @@ export const NewsContext = createContext<NewsTypes | null>(null);
 
 export const NewsContextProvider = (props: IProps) => {
   const [activeNewsLink, setActiveNewsLink] = useState<string>("science");
-  const [newsData, setNewsData] = useState<INews[]>([]);
   const [url, setUrl] = useState("science");
 
   const changeActiveNewsLink = (e: React.MouseEvent<HTMLElement>) => {
@@ -48,14 +47,26 @@ export const NewsContextProvider = (props: IProps) => {
         setUrl("movies");
         break;
 
-      case "Deily":
-        setActiveNewsLink("deily");
+      case "Education":
+        setActiveNewsLink("education");
+        setUrl("education");
         break;
       case "Politics":
         setActiveNewsLink("politics");
         setUrl("politics");
         break;
-
+      case "Technology":
+        setActiveNewsLink("technology");
+        setUrl("technology");
+        break;
+      case "World":
+        setActiveNewsLink("world");
+        setUrl("world");
+        break;
+      case "Business":
+        setActiveNewsLink("business");
+        setUrl("business");
+        break;
       default:
         setActiveNewsLink("science");
         break;

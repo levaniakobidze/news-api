@@ -6,6 +6,8 @@
   cursor: pointer;
   transition: all 0.3s;
   position: relative;
+  text-decoration: none;
+  color: var(--primary);
 }
 .news_img_cont {
   width: 100%;
@@ -30,8 +32,9 @@
   letter-spacing: 1px;
 }
 .date {
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: 300;
+  padding-right: 5px;
   color: grey;
 }
 .news_title {

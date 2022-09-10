@@ -22,6 +22,7 @@ const News = () => {
               return (
                 <NewsCard
                   key={news.id}
+                  id={news.id}
                   title={news.title}
                   img={news.imageUrl}
                   date={news.date}

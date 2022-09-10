@@ -33,8 +33,25 @@ const NewsFilter = () => {
         </li>
         <li
           onClick={changeActiveNewsLink}
-          className={activeNewsLink === "deily" ? classes.active_link : ""}>
-          Deily
+          className={activeNewsLink === "education" ? classes.active_link : ""}>
+          Education
+        </li>
+        <li
+          onClick={changeActiveNewsLink}
+          className={activeNewsLink === "world" ? classes.active_link : ""}>
+          World
+        </li>
+        <li
+          onClick={changeActiveNewsLink}
+          className={
+            activeNewsLink === "technology" ? classes.active_link : ""
+          }>
+          Technology
+        </li>
+        <li
+          onClick={changeActiveNewsLink}
+          className={activeNewsLink === "business" ? classes.active_link : ""}>
+          Business
         </li>
       </ul>
     </div>

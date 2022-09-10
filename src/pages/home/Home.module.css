@@ -4,7 +4,7 @@
   background-image: linear-gradient(
       to right,
       rgba(255, 255, 255, 1),
-      rgba(255, 255, 255, 0.65)
+      rgba(255, 255, 255, 0.25)
     ),
     url("https://images.pexels.com/photos/66284/winter-nature-season-trees-66284.jpeg?auto=compress&cs=tinysrgb&w=600");
   background-repeat: no-repeat;

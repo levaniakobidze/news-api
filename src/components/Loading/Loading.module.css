@@ -7,8 +7,8 @@
   right: 0;
   bottom: 0;
   background-image: linear-gradient(
-    rgba(194, 194, 194, 0.55),
-    rgba(174, 174, 174, 0.55)
+    rgba(78, 78, 78, 0.55),
+    rgba(118, 118, 118, 0.55)
   );
   z-index: 60;
   display: flex;
@@ -27,7 +27,7 @@
   height: 10px;
   border-radius: 50%;
   margin-left: 3px;
-  background-color: var(--primary);
+  background-color: var(--main-white);
   opacity: 0.5;
 }
 .dot1 {
