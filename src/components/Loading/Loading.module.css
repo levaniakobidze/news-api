@@ -7,8 +7,8 @@
   right: 0;
   bottom: 0;
   background-image: linear-gradient(
-    rgba(78, 78, 78, 0.55),
-    rgba(118, 118, 118, 0.55)
+    rgba(227, 227, 227, 0.55),
+    rgba(210, 210, 210, 0.55)
   );
   z-index: 60;
   display: flex;

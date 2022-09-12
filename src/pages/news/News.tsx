@@ -8,15 +8,13 @@ import NewsCard from "../../components/News/News";
 import Loading from "../../components/Loading/Loading";
 
 const News = () => {
-  const { activeNewsLink, changeActiveNewsLink, data } = useContext(
-    NewsContext
-  ) as NewsTypes;
-
+  const { data, isLoading } = useContext(NewsContext) as NewsTypes;
   return (
     <section className={classes.news}>
       <Card className={classes.news_card}>
         <NewsFilter />
-        <div className={classes.news_list}>
+        <div className={classes.news_list} data-aos='slide-up'>
+          {Boolean(data) || (isLoading && <Loading />)}
           {data &&
             data.map((news) => {
               return (

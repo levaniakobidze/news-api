@@ -18,9 +18,9 @@ const Navbar: FC = () => {
       <Card className={classes.nav_card}>
         <div className={classes.logo}>
           <span className={classes.logo_icon}>
-            <span className={classes.logo_icon_1}>C</span>
+            <span className={classes.logo_icon_1}>EL</span>
           </span>
-          <p className={classes.logo_text}>ELTA</p>
+          <p className={classes.logo_text}>News</p>
         </div>
         {/* //////////////////// */}
         <div className={classes.menu_and_btn}>
@@ -45,7 +45,7 @@ const Navbar: FC = () => {
             </li>
           </ul>
           <Link to='' className={classes.nav_btn}>
-            Hire us{" "}
+            Hire me{" "}
             <span className={classes.dots_cont}>
               <span className={classes.dot_1}></span>
               <span className={classes.dot_2}></span>

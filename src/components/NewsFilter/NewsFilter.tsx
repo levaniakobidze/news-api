@@ -9,7 +9,7 @@ const NewsFilter = () => {
   ) as NewsTypes;
 
   return (
-    <div className={classes.news_filter}>
+    <div className={classes.news_filter} data-aos='slide-up'>
       <ul className={classes.news_filter_list}>
         <li
           onClick={changeActiveNewsLink}

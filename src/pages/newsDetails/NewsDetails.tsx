@@ -1,7 +1,7 @@
 import React, { FC, useContext, useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
 import classes from "./NewsDetails.module.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { NewsContext, NewsTypes } from "../../context/NewsContext";
 import NewsCard from "../../components/News/News";
 import News from "../news/News";
@@ -22,12 +22,14 @@ const NewsDetails: FC = () => {
   const { data } = useContext(NewsContext) as NewsTypes;
   const { Id } = useParams();
   const [singleNews, setSingleNews] = useState<singleNews[]>([]);
+  let navigate = useNavigate();
 
   useEffect(() => {
+    console.log(singleNews.length);
+
     const news: singleNews[] = data.filter(
       (news) => news.id === Id?.toString()
     );
-
     setSingleNews(news);
   }, [Id]);
 
@@ -50,6 +52,15 @@ const NewsDetails: FC = () => {
             <div className={classes.author_and_date}>
               <p className={classes.author}>{singleNews[0].author}</p>
               <p className={classes.date}>{singleNews[0].date}</p>
+            </div>
+            <div className={classes.btns_cont}>
+              <a
+                className={classes.read_more_btn}
+                href={singleNews[0].readMoreUrl}
+                target='_blank'
+                rel='noreferrer'>
+                Read more
+              </a>
             </div>
           </div>
           <div className={classes.suggestions_list}>

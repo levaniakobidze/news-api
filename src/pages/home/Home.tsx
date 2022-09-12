@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <section className={classes.home}>
       <Card className={classes.home_card}>
-        <div className={classes.home_text_cont}>
+        <div className={classes.home_text_cont} data-aos='slide-up'>
           <h1 className={classes.home_title}>CTL Dream of life</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. In suscipit
