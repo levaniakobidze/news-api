@@ -20,6 +20,8 @@ export interface NewsTypes {
   changeActiveNewsLink: (e: React.MouseEvent<HTMLElement>) => void;
   data: INews["data"];
   isLoading: boolean;
+  showMobileMenu: boolean;
+  setShowMobileMenu: (value: boolean) => void;
 }
 
 type IProps = {
@@ -31,6 +33,7 @@ export const NewsContext = createContext<NewsTypes | null>(null);
 export const NewsContextProvider = (props: IProps) => {
   const [activeNewsLink, setActiveNewsLink] = useState<string>("science");
   const [url, setUrl] = useState("science");
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const changeActiveNewsLink = (e: React.MouseEvent<HTMLElement>) => {
     switch (e.currentTarget.innerText) {
@@ -82,6 +85,8 @@ export const NewsContextProvider = (props: IProps) => {
         changeActiveNewsLink,
         data: apiData.data,
         isLoading,
+        showMobileMenu,
+        setShowMobileMenu,
       }}>
       {props.children}
     </NewsContext.Provider>

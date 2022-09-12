@@ -1,10 +1,16 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useContext } from "react";
 import Card from "../Card/Card";
 import classes from "./Navbar.module.css";
 import { Link } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import { NewsContext, NewsTypes } from "../../context/NewsContext";
 
 const Navbar: FC = () => {
   const [onScroll, setOnscroll] = useState<boolean>(false);
+  const { showMobileMenu, setShowMobileMenu } = useContext(
+    NewsContext
+  ) as NewsTypes;
 
   window.addEventListener("scroll", () => {
     if (window.scrollY >= 80) {
@@ -18,40 +24,67 @@ const Navbar: FC = () => {
       <Card className={classes.nav_card}>
         <div className={classes.logo}>
           <span className={classes.logo_icon}>
-            <span className={classes.logo_icon_1}>EL</span>
+            <span className={classes.logo_icon_1}>
+              E<span className={classes.hide_L}>L</span>{" "}
+            </span>
           </span>
-          <p className={classes.logo_text}>News</p>
+          <p className={classes.logo_text}>
+            N<span className={classes.hide_ews}>ews</span>
+          </p>
         </div>
         {/* //////////////////// */}
         <div className={classes.menu_and_btn}>
-          <ul className={classes.nav_menu}>
+          <ul
+            className={
+              !showMobileMenu
+                ? classes.nav_menu
+                : `${classes.nav_menu} ${classes.mobile_active}`
+            }>
             <li>
-              <Link to='/'>Home</Link>
+              <Link to='/' onClick={() => setShowMobileMenu(false)}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to='/news'>News</Link>
+              <Link to='/news' onClick={() => setShowMobileMenu(false)}>
+                News
+              </Link>
             </li>
             <li>
-              <Link to='/movies'>Movies</Link>
+              <Link to='/' onClick={() => setShowMobileMenu(false)}>
+                About Us
+              </Link>
             </li>
             <li>
-              <Link to='/'>Careers</Link>
+              <Link to='/contact' onClick={() => setShowMobileMenu(false)}>
+                Contact
+              </Link>
             </li>
-            <li>
-              <Link to='/'>About Us</Link>
-            </li>
-            <li>
-              <Link to='/'>Contact</Link>
-            </li>
+
+            <a
+              href='https://levaniakobidze.vercel.app/'
+              target='_blank'
+              rel='noreferrer'
+              className={classes.nav_btn}>
+              Hire me{" "}
+              <span className={classes.dots_cont}>
+                <span className={classes.dot_1}></span>
+                <span className={classes.dot_2}></span>
+                <span className={classes.dot_3}></span>
+              </span>
+            </a>
           </ul>
-          <Link to='' className={classes.nav_btn}>
-            Hire me{" "}
-            <span className={classes.dots_cont}>
-              <span className={classes.dot_1}></span>
-              <span className={classes.dot_2}></span>
-              <span className={classes.dot_3}></span>
-            </span>
-          </Link>
+          {!showMobileMenu ? (
+            <MenuIcon
+              className={classes.burger}
+              onClick={() => setShowMobileMenu(true)}
+            />
+          ) : (
+            <CloseIcon
+              className={classes.close_burger}
+              onClick={() => setShowMobileMenu(false)}
+            />
+          )}
         </div>
       </Card>
     </nav>

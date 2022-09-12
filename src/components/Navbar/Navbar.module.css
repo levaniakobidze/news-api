@@ -5,17 +5,16 @@
   right: 0%;
   left: 0%;
   box-shadow: 0 0 10px 1px rgb(255, 255, 255);
-  /* box-shadow: 0 0 10px 1px rgb(221, 221, 221); */
-  /* animation: visibility 1s forwards; */
-  transition: all 0.8s;
+  background-color: var(--main-white);
+  transition: all 0.7s;
   z-index: 100;
 }
 .nav_on_scroll {
-  transition: all 0.5s;
+  transition: 0.5s;
   background-color: var(--main-white);
-  height: 70px;
+  height: 50px;
   /* ///////////////// */
-  box-shadow: 0 0 10px 1px rgb(221, 221, 221);
+  box-shadow: 0 0 10px 1px rgb(200, 200, 200);
   position: fixed;
   top: 0%;
   left: 0%;
@@ -66,7 +65,6 @@
 .nav_menu {
   display: flex;
   align-items: center;
-  margin-right: 20px;
 }
 .nav_menu li {
   list-style: none;
@@ -108,6 +106,7 @@
   justify-content: center;
   text-decoration: none;
   transition: all 0.3s;
+  margin-right: 0 !important;
 }
 .nav_btn:hover {
   background-color: var(--main-black-dark);
@@ -136,6 +135,10 @@
 .dot_3 {
   animation: dot 1s forwards infinite;
 }
+.burger,
+.close_burger {
+  display: none !important;
+}
 
 /* ////////// ANIMATIONS ////////// */
 
@@ -155,5 +158,72 @@
   }
   100% {
     opacity: 1;
+  }
+}
+/* /////////////////////////////////// */
+
+@media all and (max-width: 900px) {
+  .nav_menu {
+    display: flex;
+    position: fixed;
+    top: 9%;
+    right: -100%;
+    width: 100% !important;
+    height: 1000vw;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+    align-items: right;
+    transition: all 0.5s;
+  }
+  .nav_menu {
+    padding: 0 !important;
+  }
+  .nav_menu li {
+    width: 100%;
+  }
+
+  .nav_menu li a {
+    display: block;
+    width: 100%;
+    padding: 20px 10px;
+    margin: 0 !important;
+    font-weight: bold;
+  }
+  .nav_menu li a::before {
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    width: 0%;
+    height: 2px;
+    border-radius: var(--border);
+    background-color: var(--primary);
+    transition: all 0.3s;
+  }
+  .nav_menu li a:hover::before {
+    width: 0%;
+  }
+  .nav_btn {
+    width: 95%;
+  }
+
+  .mobile_active {
+    right: 0 !important;
+  }
+  .hide_L {
+    display: none;
+  }
+  .hide_ews {
+    display: none;
+  }
+  .logo_text {
+    font-size: 27px;
+  }
+  .burger,
+  .close_burger {
+    display: block !important;
+    font-size: 35px;
+    color: rgb(82, 82, 82);
+    cursor: pointer;
   }
 }

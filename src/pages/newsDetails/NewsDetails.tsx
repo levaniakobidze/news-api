@@ -5,6 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { NewsContext, NewsTypes } from "../../context/NewsContext";
 import NewsCard from "../../components/News/News";
 import News from "../news/News";
+import Loading from "../../components/Loading/Loading";
 
 type singleNews = {
   title: string;
@@ -19,21 +20,23 @@ type singleNews = {
 };
 
 const NewsDetails: FC = () => {
-  const { data } = useContext(NewsContext) as NewsTypes;
+  const { data, isLoading } = useContext(NewsContext) as NewsTypes;
   const { Id } = useParams();
   const [singleNews, setSingleNews] = useState<singleNews[]>([]);
-  let navigate = useNavigate();
 
   useEffect(() => {
-    console.log(singleNews.length);
-
-    const news: singleNews[] = data.filter(
-      (news) => news.id === Id?.toString()
+    if (Boolean(data)) {
+      const news: singleNews[] = data.filter(
+        (news) => news.id === Id?.toString()
+      );
+      setSingleNews(news);
+      localStorage.setItem("singleNews", JSON.stringify(news));
+    }
+    const newsFromLocalStorage = JSON.parse(
+      localStorage.getItem("singleNews") || ""
     );
-    setSingleNews(news);
+    setSingleNews(newsFromLocalStorage);
   }, [Id]);
-
-  console.log(singleNews.length > 0 && singleNews[0].author);
 
   return (
     <section className={classes.news_details}>
@@ -64,6 +67,7 @@ const NewsDetails: FC = () => {
             </div>
           </div>
           <div className={classes.suggestions_list}>
+            {isLoading && <Loading />}
             {data &&
               data.map((news) => {
                 return (

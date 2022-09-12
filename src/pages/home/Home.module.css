@@ -13,12 +13,12 @@
   object-fit: cover;
   min-height: 100vh;
   backdrop-filter: blur(10px);
+  background-color: red;
   /* opacity: 0.2; */
 }
 
 .home_card {
-  margin-top: 70px;
-  padding-top: 10rem;
+  padding-top: 16rem;
 }
 
 .home_text_cont {

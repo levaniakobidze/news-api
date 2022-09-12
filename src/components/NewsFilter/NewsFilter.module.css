@@ -1,23 +1,28 @@
 .news_filter {
   width: 100%;
-  height: 100px;
+  min-height: 100px;
   background-color: rgb(245, 245, 245);
   border-radius: var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .news_filter_list {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
   align-items: center;
 }
 .news_filter_list li {
   list-style: none;
-  margin: 0 20px;
   font-size: 13px;
-  letter-spacing: 1px;
   font-weight: 300;
   color: var(--main-black-light);
   cursor: pointer;
+  padding: 7px 13px;
+  width: 90px;
 }
 .active_link {
   background-color: var(--main-white);

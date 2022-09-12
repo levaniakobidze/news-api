@@ -6,6 +6,7 @@ import Home from "./pages/home/Home";
 import News from "./pages/news/News";
 import NewsDetails from "./pages/newsDetails/NewsDetails";
 import { useLocation } from "react-router-dom";
+import Contact from "./pages/contact/Contact";
 function App() {
   const { pathname } = useLocation();
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/news' element={<News />} />
         <Route path='/newsDetails/:Id' element={<NewsDetails />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
     </div>
   );
