@@ -8,6 +8,7 @@
   background-color: var(--main-white);
   transition: all 0.7s;
   z-index: 100;
+  position: relative;
 }
 .nav_on_scroll {
   transition: 0.5s;
@@ -107,6 +108,9 @@
   text-decoration: none;
   transition: all 0.3s;
   margin-right: 0 !important;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
 .nav_btn:hover {
   background-color: var(--main-black-dark);

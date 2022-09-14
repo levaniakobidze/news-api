@@ -42,19 +42,10 @@ const Navbar: FC = () => {
             }>
             <li>
               <Link to='/' onClick={() => setShowMobileMenu(false)}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to='/news' onClick={() => setShowMobileMenu(false)}>
                 News
               </Link>
             </li>
-            <li>
-              <Link to='/' onClick={() => setShowMobileMenu(false)}>
-                About Us
-              </Link>
-            </li>
+
             <li>
               <Link to='/contact' onClick={() => setShowMobileMenu(false)}>
                 Contact

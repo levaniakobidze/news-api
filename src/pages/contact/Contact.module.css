@@ -1,6 +1,6 @@
 .contact {
   min-height: 100vh;
-  padding-top: 80px;
+  /* padding-top: 80px; */
 }
 
 .contact_header {
@@ -59,7 +59,7 @@
 .form_title {
   width: 100%;
   padding: 20px 10px;
-  border-left: 1px solid var(--primary);
+  border-left: 1px solid rgb(0, 38, 70);
   text-align: left;
   color: var(--main-black);
   font-size: 20px;
@@ -115,4 +115,16 @@
 }
 .submit_btn_cont button:hover {
   background-color: var(--primary);
+}
+
+@media all and (max-width: 724px) {
+  .contact_form {
+    margin-top: 50px;
+  }
+  .contact_form input {
+    padding: 20px 0;
+  }
+  .contact_form input::placeholder {
+    font-size: 12px;
+  }
 }

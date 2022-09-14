@@ -1,6 +1,6 @@
 .news_details {
   width: 100%;
-  padding-top: 80px;
+  /* padding-top: 80px; */
 }
 .news_details_card {
   border-top: 1px solid rgb(225, 225, 225);
@@ -36,9 +36,9 @@
   color: var(--main-black);
 }
 .news_text {
-  letter-spacing: 0.5px;
-  font-weight: 600;
-  color: rgb(131, 131, 131);
+  letter-spacing: 0.2px;
+  font-weight: 4300;
+  color: rgb(74, 74, 74);
 }
 .author_and_date {
   display: flex;
@@ -86,6 +86,9 @@
   }
   .news_cont {
     width: 100%;
+  }
+  .news_img {
+    height: 300px;
   }
   .suggestions_list {
     padding: 50px 0;
